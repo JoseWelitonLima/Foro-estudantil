@@ -1,0 +1,97 @@
+:root {
+    /* Dollar Bill Green Color Palette */
+    --primary-color: #2B332A;      /* Deep green from dollar bill */
+    --primary-light: #768074;      /* Slightly lighter green */
+    --primary-dark: #364034;       /* Darker green for contrast */
+    --primary-accent: #768074;     /* Bright green accent */
+    --text-on-primary: #FFFFFF;    /* White text */
+    
+    /* Complementary Colors */
+    --background-light: #ffffff;
+    --background-dark: #E6EDE6;
+    --text-primary: #2B332A;
+    --text-secondary: #364034;
+}
+
+/* Apply similar CSS styling as previous artifact */
+.economia {
+    background-color: var(--background-light);
+    color: var(--text-primary);
+}
+
+/* Rest of the previous CSS would remain the same, 
+   just replacing color variables with these new ones */
+/* Top Bar Styling */
+.top-bar {
+    background-color: var(--primary-color);
+    color: var(--text-on-primary);
+}
+
+.top-bar .logo .blue,
+.top-bar .logo .upside-down-i {
+    color: var(--primary-light);
+}
+
+.top-bar .entre button {
+    background-color: var(--primary-accent);
+    color: var(--text-on-primary);
+    border: none;
+}
+
+.bottom-bar {
+    background-color: var(--primary-dark);
+}
+
+.bottom-bar ul li a {
+    color: var(--text-on-primary);
+    transition: color 0.3s ease;
+}
+
+.bottom-bar ul li a:hover {
+    color: var(--primary-light);
+}
+
+/* Highlight Cards */
+.highlight-card {
+    background-color: var(--background-dark);
+    border-top: 4px solid var(--primary-color);
+}
+
+.highlight-card .category-tag {
+    background-color: var(--primary-color);
+    color: var(--text-on-primary);
+}
+
+.category-tag {
+    background-color: var(--primary-color);
+    color: var(--text-on-primary);
+}
+
+/* Footer Styling */
+.site-footer {
+    background-color: var(--primary-dark);
+    color: var(--text-on-primary);
+}
+
+.site-footer .blue {
+    color: var(--primary-light);
+}
+
+.social-icons a {
+    color: var(--primary-light);
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--text-on-primary);
+}
+
+/* Additional Styling for Links and Interactions */
+a {
+    color: var(--primary-dark);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-accent);
+}

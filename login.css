@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --fe-blue: rgb(11, 142, 182);
+  --fe-dark: #1f1e1e;
+  --fe-gray: #333333;
+  --fe-light-gray: #666;
+  --fe-bg: #f5f7fc;
+  --fe-white: #ffffff;
+  --fe-hover-blue: #0a6ea0;
+}
+
+/* "e" espelhado: azul e negrito padrão */
+.fe-e, .reverse-e {
+  color: var(--fe-blue);
+  display: inline-block;
+  transform: scaleX(-1);
+  font-style: normal;
+}
+
+body .reverse-e {
+  color: var(--fe-white) !important;
+}
+
+body .fe-logo .fe-e {
+  color: var(--fe-blue) !important;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--fe-bg);
+  padding: 0;
+  margin: 0;
+  font-weight: 200;
+  line-height: 1.6;
+  color: var(--fe-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.logo-section {
+  width: 100%;
+  background: var(--fe-dark);
+  padding: clamp(12px, 3.5vw, 20px) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fe-logo {
+  color: var(--fe-white);
+  font-size: clamp(18px, 4.5vw, 30px);
+  font-family: "Manrope", sans-serif;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+  position: relative;
+  width: min(92vw, 850px);
+  height: clamp(500px, 70vh, 600px);
+  margin: clamp(15px, 4vh, 40px) auto;
+  background: var(--fe-white);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  will-change: transform, height;
+}
+
+.container h1 {
+  font-size: clamp(22px, 4vw, 32px);
+  margin-bottom: clamp(15px, 3vh, 30px);
+  color: var(--fe-dark);
+  font-weight: 600;
+  font-family: "Manrope", sans-serif;
+}
+
+.container p {
+  font-size: clamp(13px, 2vw, 14px);
+  margin: 12px 0;
+  color: var(--fe-light-gray);
+  font-family: "Manrope", sans-serif;
+}
+
+.toggle-text {
+  margin-top: 15px !important;
+}
+
+form { 
+  width: 100%; 
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-box {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: var(--fe-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--fe-dark);
+  text-align: center;
+  padding: clamp(15px, 4vh, 40px);
+  z-index: 1;
+  transition: all 0.6s ease-in-out 1.2s, visibility 0s 1s;
+}
+
+.container.active .form-box { right: 50%; }
+.form-box.register { visibility: hidden; }
+.container.active .form-box.register { visibility: visible; }
+
+/* INPUT BOXES */
+.input-box {
+  position: relative;
+  margin: clamp(12px, 2.5vh, 25px) 0;
+  width: 100%;
+}
+
+.input-box input {
+  width: 100%;
+  padding: clamp(10px, 1.8vh, 15px) clamp(35px, 7vw, 50px) clamp(10px, 1.8vh, 15px) clamp(12px, 2.5vw, 20px);
+  background: #fafafa;
+  border-radius: 8px;
+  border: 2px solid var(--fe-gray);
+  outline: none;
+  font-size: clamp(13px, 2vw, 15px);
+  color: var(--fe-dark);
+  font-weight: 400;
+  font-family: "Manrope", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+  border-color: var(--fe-gray);
+  background: var(--fe-white);
+  box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.1);
+}
+
+.input-box input::placeholder {
+  color: var(--fe-light-gray);
+  font-weight: 400;
+}
+
+.input-box i {
+  position: absolute;
+  right: clamp(12px, 2.5vw, 20px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(15px, 2.3vw, 18px);
+  color: var(--fe-light-gray);
+  transition: color 0.3s ease;
+}
+
+.input-box input:focus + i {
+  color: var(--fe-gray);
+}
+
+/* LINKS */
+.forgot-link { 
+  margin: -8px 0 20px;
+  text-align: right;
+  width: 100%;
+}
+
+.forgot-link a {
+  font-size: clamp(11px, 1.7vw, 13px);
+  color: var(--fe-blue);
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  transition: opacity 0.3s ease;
+}
+
+.forgot-link a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* BOTÕES */
+.btn {
+  width: 100%;
+  height: clamp(42px, 5.5vh, 48px);
+  background: var(--fe-blue);
+  border: 2px solid var(--fe-blue);
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--fe-white);
+  font-weight: 600;
+  font-size: clamp(13px, 2vw, 15px);
+  letter-spacing: 0.5px;
+  font-family: "Manrope", sans-serif;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  margin: 8px 0;
+}
+
+.btn:hover {
+  background-color: var(--fe-hover-blue);
+  border-color: var(--fe-hover-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(11, 142, 182, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--fe-blue);
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0;
+  text-decoration: none;
+  font-size: clamp(12px, 1.7vw, 14px);
+  font-family: "Manrope", sans-serif;
+  transition: opacity 0.3s ease;
+}
+
+.link-btn:hover { 
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* REDES SOCIAIS */
+.social-login {
+  margin: 15px 0;
+  width: 100%;
+}
+
+.social-text {
+  font-size: clamp(11px, 1.7vw, 13px);
+  color: var(--fe-light-gray);
+  margin-bottom: 12px;
+  font-family: "Manrope", sans-serif;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: clamp(6px, 1.8vw, 12px);
+  width: 100%;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(32px, 5.5vw, 45px);
+  height: clamp(32px, 5.5vw, 45px);
+  border: 2px solid var(--fe-gray);
+  border-radius: 8px;
+  background: var(--fe-white);
+  color: var(--fe-dark);
+  font-size: clamp(13px, 2.3vw, 18px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.social-btn i {
+  font-size: clamp(13px, 2.3vw, 18px);
+}
+
+.google-btn:hover {
+  border-color: #db4437;
+  color: #db4437;
+  background: rgba(219, 68, 55, 0.05);
+}
+
+.apple-btn:hover {
+  border-color: #000000;
+  color: #000000;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.facebook-btn:hover {
+  border-color: #4267B2;
+  color: #4267B2;
+  background: rgba(66, 103, 178, 0.05);
+}
+
+/* TOGGLE BOX - ANIMAÇÕES CSS NATIVAS */
+.toggle-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.toggle-box::before {
+  content: '';
+  position: absolute;
+  left: -250%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--fe-blue), var(--fe-hover-blue));
+  border-radius: 150px;
+  z-index: 2;
+  transition: 1.8s ease-in-out;
+}
+
+.container.active .toggle-box::before { left: 50%; }
+
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  color: var(--fe-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transition: 0.6s ease-in-out;
+  padding: clamp(15px, 3vh, 40px);
+  text-align: center;
+}
+
+.toggle-panel h2 {
+  font-size: clamp(20px, 3.3vw, 28px);
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-family: "Manrope", sans-serif;
+}
+
+.toggle-panel p { 
+  margin-bottom: 25px;
+  font-size: clamp(12px, 1.9vw, 15px);
+  opacity: 0.9;
+  line-height: 1.4;
+  font-family: "Manrope", sans-serif;
+  color: var(--fe-white);
+}
+
+.toggle-panel.toggle-left {
+  left: 0;
+  transition-delay: 1.2s;
+}
+.container.active .toggle-panel.toggle-left {
+  left: -50%;
+  transition-delay: 0.6s;
+}
+.toggle-panel.toggle-right {
+  right: -50%;
+  transition-delay: 0.6s;
+}
+.container.active .toggle-panel.toggle-right {
+  right: 0;
+  transition-delay: 1.2s;
+}
+
+.toggle-btn {
+  width: clamp(110px, 18vw, 160px);
+  height: clamp(36px, 4.5vh, 46px);
+  background: transparent;
+  border: 2px solid var(--fe-white);
+  box-shadow: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: clamp(11px, 1.7vw, 14px);
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--fe-white);
+  font-family: "Manrope", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ============ RESPONSIVIDADE AVANÇADA ============ */
+/* Dispositivos muito pequenos (até 360px) */
+@media screen and (max-width: 360px) {
+  .container {
+    height: auto;
+    min-height: calc(100vh - 40px);
+  }
+  
+  .form-box {
+    padding: 15px;
+    height: 65%;
+  }
+  
+  .input-box {
+    margin: 10px 0;
+  }
+  
+  .input-box input {
+    padding: 10px 35px 10px 12px;
+  }
+  
+  .input-box i {
+    right: 10px;
+    font-size: 14px;
+  }
+  
+  .toggle-panel h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .toggle-panel p {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .social-buttons {
+    gap: 6px;
+  }
+}
+
+/* Dispositivos móveis (361px - 650px) */
+@media screen and (min-width: 361px) and (max-width: 650px) {
+  .container { 
+    height: calc(100vh - 40px); 
+    margin: 10px auto;
+  }
+  
+  .form-box {
+    bottom: 0;
+    width: 100%;
+    height: 70%;
+    padding: 20px;
+  }
+  
+  .container.active .form-box {
+    right: 0;
+    bottom: 30%;
+  }
+  
+  .toggle-box::before {
+    left: 0;
+    top: -270%;
+    width: 100%;
+    height: 300%;
+    border-radius: 20vw;
+    transition: all 1s ease-in-out;
+  }
+  
+  .container.active .toggle-box::before {
+    left: 0;
+    top: 70%;
+  }
+  
+  .container.active .toggle-panel.toggle-left {
+    left: 0;
+    top: -30%;
+  }
+  
+  .toggle-panel {
+    width: 100%;
+    height: 30%;
+    padding: 15px;
+  }
+  
+  .toggle-panel.toggle-left { 
+    top: 0;
+    justify-content: flex-start;
+    padding-top: 15px;
+  }
+  
+  .toggle-panel.toggle-right {
+    right: 0;
+    bottom: -30%;
+    justify-content: flex-end;
+    padding-bottom: 15px;
+  }
+  
+  .container.active .toggle-panel.toggle-right { 
+    bottom: 0; 
+  }
+  
+  /* Otimização para tablets pequenos em modo retrato */
+  @media screen and (min-width: 500px) and (max-width: 650px) and (orientation: portrait) {
+    .form-box {
+      height: 65%;
+    }
+    
+    .container.active .form-box {
+      bottom: 35%;
+    }
+    
+    .toggle-box::before {
+      top: -250%;
+    }
+    
+    .container.active .toggle-box::before {
+      top: 65%;
+    }
+  }
+}
+
+/* Tablets pequenos e dispositivos em modo paisagem (651px - 768px) */
+@media screen and (min-width: 651px) and (max-width: 768px) {
+  .container {
+    height: clamp(550px, 80vh, 650px);
+  }
+  
+  .form-box {
+    padding: 20px;
+  }
+  
+  .toggle-panel {
+    padding: 20px;
+  }
+}
+
+/* Dispositivos com telas muito altas (acima de 900px de altura) */
+@media screen and (min-height: 900px) {
+  .container {
+    height: 650px;
+  }
+  
+  .form-box {
+    padding: 30px;
+  }
+}
+
+/* Otimização para telas muito largas (acima de 1200px) */
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 900px;
+  }
+}
+
+/* Mostra o botão toggle apenas no desktop */
+@media screen and (max-width: 650px) {
+  .toggle-panel .toggle-btn {
+    display: none;
+  }
+}
+
+/* Ajustes para quando o teclado virtual está aberto em dispositivos móveis */
+@media screen and (max-width: 650px) and (max-height: 500px) {
+  .container {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .form-box {
+    position: relative;
+    height: auto;
+    padding-bottom: 80px;
+  }
+  
+  .container.active .form-box {
+    bottom: 0;
+  }
+  
+  .toggle-box::before {
+    display: none;
+  }
+  
+  .toggle-panel {
+    display: none;
+  }
+}
+
+/* Prevenção de zoom em inputs no iOS */
+input, select, textarea {
+  font-size: 16px !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select:focus, textarea:focus, input:focus {
+    font-size: 16px !important;
+  }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Entrar • Foro estudantil</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <!-- LOGO SECTION -->
+  <div class="logo-section">
+    <div class="fe-logo">
+      Foro <span class="fe-e">e</span>studantil
+    </div>
+  </div>
+
+  <!-- CONTAINER DO FORMULÁRIO -->
+  <section class="container" aria-label="Formulário de acesso">
+    <!-- Form box: LOGIN -->
+    <div class="form-box login">
+      <h1>Bem-vindo de volta</h1>
+      <form>
+        <div class="input-box">
+          <input type="email" placeholder="E-mail" required>
+          <i class="fa-regular fa-envelope"></i>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Senha" required>
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <p class="forgot-link">
+          <a href="#">Esqueceu a senha?</a>
+        </p>
+        <button class="btn" type="submit">Entrar</button>
+        <div class="social-login">
+          <p class="social-text">Ou continue com</p>
+          <div class="social-buttons">
+            <button type="button" class="social-btn google-btn">
+              <i class="fab fa-google"></i>
+            </button>
+            <button type="button" class="social-btn apple-btn">
+              <i class="fab fa-apple"></i>
+            </button>
+            <button type="button" class="social-btn facebook-btn">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+          </div>
+        </div>
+        <p class="toggle-text">Não tem conta?
+          <button type="button" class="link-btn register-btn">Criar conta</button>
+        </p>
+      </form>
+    </div>
+
+    <!-- Form box: REGISTRO -->
+    <div class="form-box register">
+      <h1>Crie sua conta</h1>
+      <form>
+        <div class="input-box">
+          <input type="text" placeholder="Nome completo" required>
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <div class="input-box">
+          <input type="email" placeholder="E-mail" required>
+          <i class="fa-regular fa-envelope"></i>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Senha" required>
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <button class="btn" type="submit">Registrar</button>
+        <div class="social-login">
+          <p class="social-text">Ou continue com</p>
+          <div class="social-buttons">
+            <button type="button" class="social-btn google-btn">
+              <i class="fab fa-google"></i>
+            </button>
+            <button type="button" class="social-btn apple-btn">
+              <i class="fab fa-apple"></i>
+            </button>
+            <button type="button" class="social-btn facebook-btn">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+          </div>
+        </div>
+        <p class="toggle-text">Já possui conta?
+          <button type="button" class="link-btn login-btn">Entrar</button>
+        </p>
+      </form>
+    </div>
+
+    <!-- Painel de alternância -->
+    <div class="toggle-box">
+      <div class="toggle-panel toggle-left">
+        <h2>Já é membro?</h2>
+        <p>Faça login para continuar no Foro <span class="reverse-e">e</span>studantil.</p>
+        <button class="btn toggle-btn login-btn" type="button">Entrar</button>
+      </div>
+      <div class="toggle-panel toggle-right">
+        <h2>Novo por aqui?</h2>
+        <p>Crie uma conta e participe da comunidade.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="login.js"></script>
+</body>
+</html>
